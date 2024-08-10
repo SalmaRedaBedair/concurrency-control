@@ -64,3 +64,19 @@
    - there is a transaction that reads item x twice
    - there is another transaction that updates item x while the interval between two reads
    - the first transaction will fail
+## Recovery
+- when interrupt occurs database will return back to its old state before interrupt
+### types of failure
+1. computer failure (system crash)
+   - hardware
+   - software
+   - network
+2. transaction or system error
+   - overflow
+   - division by zero
+3. local errors or exception conditions detected by transaction
+   - insufficient balance
+4. concurrency control enforcement
+5. Disk failure
+   - maybe we lose data while reading or write from disk
+6. physical problems or catastrophes
