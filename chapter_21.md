@@ -80,3 +80,10 @@
 5. Disk failure
    - maybe we lose data while reading or write from disk
 6. physical problems or catastrophes
+
+## transaction states
+- active => between begin and end
+- partially committed => at the end of the transaction, before say that transaction is committed and apply its changes to database
+- committed => at the end of the transaction, after partially committed, when that transaction changes are applied to database
+- failed => at the end of the transaction, after partially committed, when i find error in transaction and decide to cancel its changes
+- terminated => end
