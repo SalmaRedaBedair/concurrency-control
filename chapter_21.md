@@ -87,3 +87,16 @@
 - committed => at the end of the transaction, after partially committed, when that transaction changes are applied to database
 - failed => at the end of the transaction, after partially committed, when i find error in transaction and decide to cancel its changes
 - terminated => end
+
+## The system log
+- file contain any changes i did to database
+- any read or write operation will be stored here
+- the log is sequential, appended only file
+- it is stored in disk, so it will not affected by any failure except disk or catastrophes
+
+### transaction log records
+- [start_transaction, T]
+- [write_item, T, x, old_value, new_value]
+- [read_item, T, x]
+- [commit, T]
+- [abort, T]
