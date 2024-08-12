@@ -100,3 +100,22 @@
 - [read_item, T, x]
 - [commit, T]
 - [abort, T]
+
+## Desirable properties of transaction (ACID)
+### Atomicity
+- atomic unit of processing
+- all operations must be completed, or none
+- responsibility: transaction recovery subsystem  
+### Consistency preservation
+- meat all constraints
+- if transaction is done in constraint database, it should leave it consistent
+- responsibility: programmers must follow constraints while writing code to be the same as in database schema
+### Isolation
+- different transactions should not affect each other
+- every transaction should be isolated from each other
+- responsibility: concurrency control subsystem
+### Durability or permanency
+- committed transaction should not be lost because of any failure
+- they must persist in the database
+- responsibility: transaction recovery subsystem
+
