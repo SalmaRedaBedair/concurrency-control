@@ -119,3 +119,17 @@
 - they must persist in the database
 - responsibility: transaction recovery subsystem
 
+## Characterising Schedules Based on Recoverability
+- schedule: order of execution of different transactions, useful for solving conflicts
+### when conflict occurs?
+- when the same item have different operations in different transactions at least one of them write
+- that is conflict table for different transactions and different cases
+![](./images/conflict.PNG)
+- r1 => refers to read in transaction 1
+- w2 => refers to write in transaction 2
+1. first conflict: same item in 2 different transactions, one of them write
+2. second conflict: same item in 2 different transactions, one of them write
+3. third conflict: same item in 2 different transactions, both of them write
+
+- in other cases that don't conflict, either element is different 
+or read and write of same item is in the same transaction
