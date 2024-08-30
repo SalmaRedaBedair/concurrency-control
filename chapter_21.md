@@ -133,3 +133,11 @@
 
 - in other cases that don't conflict, either element is different 
 or read and write of same item is in the same transaction
+
+## cascading rollback, cascading abort
+- when transaction T1 read form transaction T2
+- transaction T2 is rollback
+- transaction T1 rollback too
+- so we read only from transactions that are committed
+- cascade less is the opposite of cascading rollback, 
+it avoid cascading rollback by reading only from transactions that are committed
