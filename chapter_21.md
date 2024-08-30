@@ -141,3 +141,8 @@ or read and write of same item is in the same transaction
 - so we read only from transactions that are committed
 - cascade less is the opposite of cascading rollback, 
 it avoid cascading rollback by reading only from transactions that are committed
+
+## strict scheduling
+- read or write only form transactions that are committed
+- cascade less => prevent only read from uncommitted transactions
+- strict scheduling => prevent both read and write form uncommitted transactions
