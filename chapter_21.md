@@ -146,3 +146,23 @@ it avoid cascading rollback by reading only from transactions that are committed
 - read or write only form transactions that are committed
 - cascade less => prevent only read from uncommitted transactions
 - strict scheduling => prevent both read and write form uncommitted transactions
+
+## schedule based on recoverability
+- when transactions are executed concurrently, in an interleaving fashion
+- order of execution form all different transactions based on time is known as schedule
+![](./images/schedule.PNG)
+### two operation in schedule are said to be in conflict if:
+1. they belongs to different transactions
+2. access the same item (x)
+3. at least one of the operations is write_item(x)
+
+### characterising schedule based on recoverability
+#### recoverable schedule
+- the transaction that write first must commit before the other transaction committed
+![](./images/nonrec.PNG)
+- Sa is non recoverable schedule, T1 committed before T2
+![](./images/nonrec2.PNG)
+- Sc is non recoverable schedule, T2 committed before T1 aborted
+![](./images/rec.PNG)
+- Sd is recoverable schedule, T1 committed before T2 aborted
+- Se is non recoverable schedule, non is committed
